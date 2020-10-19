@@ -16,3 +16,6 @@ Users will be able to sign up and create an account, post their thoughts, and in
 * JWT-decode : JSON Web Tokens (JWTs) are an alternative to using session cookies for authentication.
 * Faker : npm package
 * nodemon ; npm package
+
+### Author
+Made by CS Maxwell
