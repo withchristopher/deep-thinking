@@ -1,7 +1,6 @@
 {
   "name": "deep-thinking",
   "version": "1.0.0",
-  "homepage": "https://deep-thinking.herokuapp.com/",
   "description": "### Description Combined the four technologies of the MERN stack (MongoDB, Express.js, React, and Node.js) to build a social media application called Deep Thoughts.",
   "main": "server/server.js",
   "scripts": {
