@@ -2,13 +2,15 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import FriendList from '../components/FriendList';
 import ThoughtList from '../components/ThoughtList';
-
-import { useQuery } from '@apollo/react-hooks';
+import ThoughtForm from '../components/ThoughtForm';
+import { ADD_FRIEND } from '../utils/mutations';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Profile = () => {
   const { username: userParam } = useParams();
+  const [addFriend] = useMutation(ADD_FRIEND);
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam }
@@ -33,12 +35,28 @@ const Profile = () => {
     )
   }
 
+  const handleClick = async () => {
+    try {
+      await addFriend({
+        variables: { id: user._id }
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
+
+        {userParam && (
+        <button className="btn ml-auto" onClick={handleClick}>
+          Add Friend
+        </button>
+        )}
       </div>
 
       <div className="flex-row justify-space-between mb-3">
@@ -53,7 +71,8 @@ const Profile = () => {
       friends={user.friends}
     />
   </div>
-</div>
+  </div>
+        <div className="mb-3">{!userParam && <ThoughtForm />}</div>
 </div>
   );
 };
