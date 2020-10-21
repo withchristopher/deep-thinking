@@ -1,4 +1,6 @@
 ## Deep thinking is a social-media application, built using MongoDb, ExpressJS, React, NodeJS
+Social-network application.
+
 
 ### Description
 Combined the four technologies of the MERN stack (MongoDB, Express.js, React, and Node.js) to build a social media application called Deep Thoughts.
@@ -17,5 +19,7 @@ Users will be able to sign up and create an account, post their thoughts, and in
 * Faker : npm package
 * nodemon ; npm package
 
+### Viewing
+Live web-app here: https://deep-thinking.herokuapp.com/  
 ### Author
 Made by CS Maxwell
