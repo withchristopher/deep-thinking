@@ -2,6 +2,9 @@
 Social-network application.
 
 
+## Demo
+https://deep-thinking.herokuapp.com/
+
 ### Description
 Combined the four technologies of the MERN stack (MongoDB, Express.js, React, and Node.js) to build a social media application called Deep Thoughts.
 
